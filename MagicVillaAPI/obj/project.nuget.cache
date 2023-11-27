@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ue+gQZjKy/ap+etYu6pIDqVMv+tDsCqH/8J+eMFaEeLM68Iu/QjjM4AjlX/Dk7FHB+Q91posApmwz7ahTBgC5w==",
+  "dgSpecHash": "aVEkVpWZCi0CzyLNrZEdfv4xrC/RTW63vGJPbn90LiipVHrwS7F7g4wQRtlV+fvEacGV12g2CIKEfOVXaOa5Bg==",
   "success": true,
   "projectFilePath": "D:\\DOTNET\\MagicVilla\\MagicVillaAPI\\MagicVillaAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\dell\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\dell\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\dell\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\dell\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\dell\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\dell\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\dell\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\dell\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0\\microsoft.entityframeworkcore.6.0.0.nupkg.sha512",
