@@ -64,3 +64,5 @@ D:\DOTNET\MagicVilla\MagicVillaAPI\obj\Debug\net6.0\refint\MagicVillaAPI.dll
 D:\DOTNET\MagicVilla\MagicVillaAPI\obj\Debug\net6.0\MagicVillaAPI.pdb
 D:\DOTNET\MagicVilla\MagicVillaAPI\obj\Debug\net6.0\MagicVillaAPI.genruntimeconfig.cache
 D:\DOTNET\MagicVilla\MagicVillaAPI\obj\Debug\net6.0\ref\MagicVillaAPI.dll
+D:\DOTNET\MagicVilla\MagicVillaAPI\bin\Debug\net6.0\AutoMapper.dll
+D:\DOTNET\MagicVilla\MagicVillaAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
