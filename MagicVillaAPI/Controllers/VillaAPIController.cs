@@ -26,7 +26,7 @@ namespace MagicVillaAPI.Controllers
 
         [HttpGet]
         [ProducesResponseType(200)]
-        public async Task<ActionResult<IEnumerable<VillaDTO>>> GetVillas()
+        public async Task<ActionResult<APIResponse>> GetVillas()
         {
             var villaList = await _villaRepo.GetAllAsync();
             _response.Result = _mapper.Map<List<VillaDTO>>(villaList);
