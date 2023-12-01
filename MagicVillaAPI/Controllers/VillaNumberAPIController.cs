@@ -57,7 +57,6 @@ namespace MagicVillaAPI.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -70,6 +69,10 @@ namespace MagicVillaAPI.Controllers
                     IsSuccess = false,
                     ErrorMessages = ModelState.Values.SelectMany(v => v.Errors.Select(e => e.ErrorMessage)).ToList()
                 });
+            }
+            if (villaNumberDto.VillaNo == 0)
+            {
+                return BadRequest();
             }
             if (villaNumberDto == null)
             {
@@ -92,10 +95,11 @@ namespace MagicVillaAPI.Controllers
 
             return CreatedAtRoute("GetVilla", new { id = model.VillaNo }, _apiResponse);
         }
-        [HttpDelete("{id:int}", Name = "DeleteVillaNumber")]
+        [HttpDelete("{villaNo:int}", Name = "DeleteVillaNumber")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<APIResponse>> DeleteVillaNumber(int villaNo)
         {
             if (villaNo == 0)
@@ -112,12 +116,13 @@ namespace MagicVillaAPI.Controllers
             return Ok(_apiResponse);
         }
 
-        [HttpPut("{id:int}", Name = "UpdateVillaNumber")]
+        [HttpPut("{villaNo:int}", Name = "UpdateVillaNumber")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<ActionResult<APIResponse>> UpdateVilla(int id, [FromBody] VillaNumberDTO villaNumberDto)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<APIResponse>> UpdateVilla(int villaNo, [FromBody] VillaNumberDTO villaNumberDto)
         {
-            if (villaNumberDto == null || id != villaNumberDto.VillaNo)
+            if (villaNumberDto == null || villaNo != villaNumberDto.VillaNo)
             {
                 return BadRequest();
             }
