@@ -1,0 +1,38 @@
+IHttpClientFactory httpClient // DI
+IConfiguration configuration // DI
+
+ApiRequest apiRequest // parameter
+
+var client = httpClient.CreateClient("MagicAPI");
+HttpRequestMessage message = new HttpRequestMessage();
+message.Headers.Add("Accept", "application/json");
+message.RequestUri = new Uri(apiRequest.Url);
+message.Content = new StringContent(JsonConvert.SerializeObject(apiRequest.Data), Encoding.UTF8, "application/json");
+
+switch(apiRequest.ApiType) {
+
+	case SD.ApiType.POST:
+		message.Method = HttpMethod.Post;
+		break;
+	case SD.ApiType.PUT:
+		message.Method = HttpMethod.PUT;
+		break;
+	case SD.ApiType.DELETE:
+		message.Method = HttpMethod.Delete;
+		break;
+	default:
+		message.Method = HttpMethod.GET;
+		break;
+
+}
+
+HttpResponseMessage apiReponse = await client.SendAsync(message);
+
+var apiContent = await apiResponse.Content.ReadAsStringAsync();
+var apiResponse = JsonConvert.DeseriaizeObject<T>(apiContent);
+return APIResponse;
+
+
+///////
+
+private string villaUrl = configuration.GetValue<string>("ServiceUrls:VillaAPI");

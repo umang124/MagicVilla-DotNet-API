@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "roRDL/7KaM95pdwo2z89uftOA8wKCJ+dA+rXti/cs9A=",
+  "Hash": "ZLKVLGh8GVJn9M7tT/P9AZX+FPd+l2GqVPXCO+7t9Q0=",
   "Source": "MagicVilla_Web",
   "BasePath": "_content/MagicVilla_Web",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\DOTNET\\MagicVilla\\MagicVillaAPI\\MagicVillaAPI.csproj",
+      "Version": 2,
+      "Source": "MagicVillaAPI",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [
     {
       "Name": "MagicVilla_Web\\wwwroot",
