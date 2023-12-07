@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\DOTNET\\MagicVilla\\MagicVilla_Web\\wwwroot\\images\\home\\image1.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\image1.jpg"
+    },
+    {
+      "Id": "D:\\DOTNET\\MagicVilla\\MagicVilla_Web\\wwwroot\\images\\home\\image2.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\image2.jpg"
+    },
+    {
       "Id": "D:\\DOTNET\\MagicVilla\\MagicVilla_Web\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

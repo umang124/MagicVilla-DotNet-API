@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace MagicVillaAPI.Models.Dto
 {
@@ -9,5 +10,7 @@ namespace MagicVillaAPI.Models.Dto
         [Required]
         public int VillaId { get; set; }
         public string SpecialDetails { get; set; }
+        [ValidateNever]
+        public Villa Villa { get; set; }
     }
 }

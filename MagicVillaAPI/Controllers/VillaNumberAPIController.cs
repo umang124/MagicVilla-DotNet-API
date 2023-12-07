@@ -25,7 +25,7 @@ namespace MagicVillaAPI.Controllers
         [ProducesResponseType(200)]
         public async Task<ActionResult<APIResponse>> GetVillaNumbers()
         {
-            var villaList = await _villaNumberRepo.GetAllAsync();
+            var villaList = await _villaNumberRepo.GetAllAsync(includeProperties:"Villa");
             _apiResponse.Result = _mapper.Map<List<VillaNumberDTO>>(villaList);
             _apiResponse.StatusCode = HttpStatusCode.OK;
             return Ok(_apiResponse);
@@ -43,7 +43,7 @@ namespace MagicVillaAPI.Controllers
                 _apiResponse.IsSuccess = false;
                 return BadRequest(_apiResponse);
             }
-            var villaNumber = await _villaNumberRepo.GetAsync(x => x.VillaNo == villaNo);
+            var villaNumber = await _villaNumberRepo.GetAsync(x => x.VillaNo == villaNo, includeProperties:"Villa");
             if (villaNumber == null)
             {
                 _apiResponse.StatusCode = HttpStatusCode.NotFound;
@@ -60,18 +60,10 @@ namespace MagicVillaAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<ActionResult<APIResponse>> CreateVilla([FromBody] VillaNumberDTO villaNumberDto)
+        public async Task<ActionResult<APIResponse>> CreateVillaNumber([FromBody] VillaNumberDTO villaNumberDto)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(new APIResponse
-                {
-                    IsSuccess = false,
-                    ErrorMessages = ModelState.Values.SelectMany(v => v.Errors.Select(e => e.ErrorMessage)).ToList()
-                });
-            }
             if (villaNumberDto.VillaNo == 0)
-            {
+            {                
                 return BadRequest();
             }
             if (villaNumberDto == null)
@@ -95,6 +87,7 @@ namespace MagicVillaAPI.Controllers
 
             return CreatedAtRoute("GetVilla", new { id = model.VillaNo }, _apiResponse);
         }
+
         [HttpDelete("{villaNo:int}", Name = "DeleteVillaNumber")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
