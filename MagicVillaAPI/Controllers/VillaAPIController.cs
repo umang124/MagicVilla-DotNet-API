@@ -3,6 +3,7 @@ using MagicVillaAPI.Data;
 using MagicVillaAPI.Models;
 using MagicVillaAPI.Models.Dto;
 using MagicVillaAPI.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ namespace MagicVillaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class VillaAPIController : ControllerBase
     {
         private readonly IVillaRepository _villaRepo;
@@ -24,6 +26,7 @@ namespace MagicVillaAPI.Controllers
             _response = new APIResponse();
         }
 
+       
         [HttpGet]
         [ProducesResponseType(200)]
         public async Task<ActionResult<APIResponse>> GetVillas()
@@ -38,6 +41,7 @@ namespace MagicVillaAPI.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
+        
         public async Task<ActionResult<APIResponse>> GetVilla(int id)
         {
             if (id == 0)
@@ -65,6 +69,7 @@ namespace MagicVillaAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
+       
         public async Task<ActionResult<APIResponse>> CreateVilla([FromBody] VillaDTO villaDto)
         {
             if (villaDto == null)
@@ -94,6 +99,7 @@ namespace MagicVillaAPI.Controllers
         }
 
         [HttpDelete("{id:int}", Name = "DeleteVilla")]
+       
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -118,6 +124,7 @@ namespace MagicVillaAPI.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        
         public async Task<ActionResult<APIResponse>> UpdateVilla(int id, [FromBody] VillaDTO villaDto)
         {
             if (villaDto == null || id != villaDto.Id)

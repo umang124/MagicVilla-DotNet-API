@@ -77,3 +77,4 @@ D:\DOTNET\MagicVilla\MagicVilla_Web\bin\Debug\net6.0\MagicVIlla_Utility.pdb
 D:\DOTNET\MagicVilla\MagicVilla_Web\obj\Debug\net6.0\MagicVilla_Web.csproj.AssemblyReference.cache
 D:\DOTNET\MagicVilla\MagicVilla_Web\obj\Debug\net6.0\MagicVilla_Web.MvcApplicationPartsAssemblyInfo.cs
 D:\DOTNET\MagicVilla\MagicVilla_Web\obj\Debug\net6.0\MagicVilla_Web.csproj.CopyComplete
+D:\DOTNET\MagicVilla\MagicVilla_Web\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
